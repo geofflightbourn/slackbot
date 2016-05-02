@@ -33,7 +33,7 @@ module.exports = function(robot) {
     response.reply(listOfUsernames)
   })
 
-  robot.hear(/give me randoms/i, function(response) // random classmate usernames
+  robot.hear(/give me randoms/i, function(response) {// random classmate usernames
   var userIds = Object.keys(robot.brain.data.users);
   var randomUsername = robot.brain.data.users[userIds[Math.floor(Math.random() * userIds.length)]].name
   response.reply(randomUsername)
