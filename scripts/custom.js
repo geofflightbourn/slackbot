@@ -5,13 +5,13 @@ module.exports = function(robot) {
 		response.send("Hi, how are you? 1 - good or 2 - bad?")
 	})
 
-	if (robot.hear(/1/i) {
-		response()
-		response.send("Great!")
-	}	else if (robot.hear(/2/i) {
-		response()
-		respond.send("Sorry to hear that...")
-	}
+   if (robot.hear(/1/i)) {
+      response()
+      response.send("Great!")
+  } else if (robot.hear(/2/i)) {
+      response()
+      respond.send("Sorry to hear that...")
+  }
 
 	robot.hear(/i like (.+)/i, function(response) {
 		var like = response.match[1]
