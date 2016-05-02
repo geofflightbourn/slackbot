@@ -8,10 +8,11 @@ module.exports = function(robot) {
   robot.hear(/(1|2)/i, function(response) {
     if (response.match[1] === '1') {
        response.send("Great!")
-   } else if (response.match[2] === '2') {
-     robot.http("http://www.edgewoodyachtclub.com/wp-content/uploads/2016/01/beer.gif")
-     .get() (err, res, body)
-      respond.send("Sorry to hear that...")
+   } else if (response.match[1] === '2') {
+     robot.http("http://www.edgewoodyachtclub.com/wp-content/uploads/2016/01/beer.gif").get()(function(err, res, body){
+      respond.send("Sorry to hear that... have a beer.")
+     })
+
    }
   })
 
@@ -20,17 +21,23 @@ module.exports = function(robot) {
 		response.reply('I also like ' + like)
 	})
 
-	robot.respond(/greet geoff/i, function(response) {
-		var user = robot.brain.userForName('geoff')
-		response.reply('Call on ' + user.real_name + '!')
+	robot.respond(/greet random/i, function(response) { //greets a random classmate
+    var userIds = Object.keys(robot.brain.data.users);
+    var randomUsername = robot.brain.data.users[userIds[Math.floor(Math.random() * userIds.length)]].name
+		response.reply('hello ' + user.userIds + '!')
 	})
 
-  robot.hear(/give me people/i, function(response) { //gives list of classmates
+  robot.hear(/give me people/i, function(response) { //gives list of classmate usernames
     var userIds = Object.keys(robot.brain.data.users);
     var listOfUsernames = userIds.map(function(userId) { return robot.brain.data.users[userId].name })
     response.reply(listOfUsernames)
   })
 
+  robot.hear(/give me randoms/i, function(response) // random classmate usernames
+  var userIds = Object.keys(robot.brain.data.users);
+  var randomUsername = robot.brain.data.users[userIds[Math.floor(Math.random() * userIds.length)]].name
+  response.reply(randomUsername)
+})
 
 
 }
