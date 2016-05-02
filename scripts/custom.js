@@ -12,7 +12,7 @@ module.exports = function(robot) {
      //robot.http("http://www.edgewoodyachtclub.com/wp-content/uploads/2016/01/beer.gif").get()(function(err, res, body){
       response.send("Sorry to hear that... have a beer.")
       response.send("http://www.edgewoodyachtclub.com/wp-content/uploads/2016/01/beer.gif")
-     })
+     //})
     }
   })
 
@@ -24,7 +24,7 @@ module.exports = function(robot) {
 	robot.respond(/greet random/i, function(response) { //greets a random classmate
     var userIds = Object.keys(robot.brain.data.users);
     var randomUsername = robot.brain.data.users[userIds[Math.floor(Math.random() * userIds.length)]].name
-		response.reply('hello @' + randomUsername + '!')
+		response.reply('hello @' + randomUsername + '!' + 'Geoff' + "''" + 's bot.')
 	})
 
   robot.hear(/give me people/i, function(response) { //gives list of classmate usernames
