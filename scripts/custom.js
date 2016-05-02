@@ -10,7 +10,7 @@ module.exports = function(robot) {
        response.send("Great!")
    } else if (response.match[1] === '2') {
      robot.http("http://www.edgewoodyachtclub.com/wp-content/uploads/2016/01/beer.gif").get()(function(err, res, body){
-      respond.send("Sorry to hear that... have a beer.")
+      response.send("Sorry to hear that... have a beer.")
      })
 
    }
