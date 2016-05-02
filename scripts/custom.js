@@ -25,6 +25,12 @@ module.exports = function(robot) {
 		response.reply('Call on ' + user.real_name + '!')
 	})
 
+  robot.hear(/give me people/i, function(response) { //gives list of classmates
+    var userIds = Object.keys(robot.brain.data.users);
+    var listOfUsernames = userIds.map(function(userId) { return robot.brain.data.users[userId].name })
+    response.reply(listOfUsernames)
+  })
+
 
 
 }
