@@ -21,7 +21,7 @@ module.exports = function(robot) {
 		response.reply('I also like ' + like)
 	})
 
-	robot.respond(/greet random/i, function(response) { //greets a random classmate
+	robot.hear(/greet random/i, function(response) { //greets a random classmate
     var userIds = Object.keys(robot.brain.data.users);
     var randomUsername = robot.brain.data.users[userIds[Math.floor(Math.random() * userIds.length)]].name
 		response.reply('hello @' + randomUsername + '!' + 'Geoff' + "''" + 's bot.')
