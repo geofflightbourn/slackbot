@@ -26,6 +26,8 @@ module.exports = function(robot) {
           return "paper wins";
         }
       }
+    } // end compare
+
       if (choice1 === "paper") {
         if (choice2 === "rock") {
           return "paper wins";
@@ -34,6 +36,8 @@ module.exports = function(robot) {
             return "scissors wins";
           }
         }
+      } //end paper
+
         if (choice1 === "scissors") {
           if (choice2 === "rock") {
             return "rock wins";
@@ -42,8 +46,8 @@ module.exports = function(robot) {
               return "scissors wins";
             }
           }
-        }
-      }
+        } // end scissors
+
 
     })
 
