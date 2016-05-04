@@ -24,7 +24,7 @@ module.exports = function(robot) {
 	robot.hear(/greet random/i, function(response) { //greets a random classmate
     var userIds = Object.keys(robot.brain.data.users);
     var randomUsername = robot.brain.data.users[userIds[Math.floor(Math.random() * userIds.length)]].name
-		response.reply('hello @' + randomUsername + '!' + 'Geoff' + "''" + 's bot.')
+		response.reply('Greetings @' + randomUsername + '!' + ' Sent From Geoff' + "''" + 's bot.')
 	})
 
   robot.hear(/give me people/i, function(response) { //gives list of classmate usernames
